@@ -1,0 +1,71 @@
+// Ezra Padmanabham 10511360
+// Semester One 2021
+// Edith Cowan University 
+// Assignment One Part 1
+// Finalised on the 13th of April 2021
+
+// Dictionary.cpp : is the file that contains the main function and also the main menu function. 
+// This .cpp file also holds the menu function which is called after each task function is called. 
+
+#include <iostream>
+#include "Word.h"
+#include "Dictionary.h"
+
+using namespace std;
+int count_z(string s);
+Dictionary test;
+string choice;
+void menu();
+
+int main()
+{
+	// This calls the load dictionary function. 
+	test.loadDictionary("dictionary2021.txt");
+	menu();
+
+}
+
+void menu()
+{
+
+	cout << "Please select option below\n";
+	cout << "1) Search for a word\n";
+	cout << "2) Search for words with more than 3 z's\n";
+	cout << "3) Find the words that have a q without a following u\n";
+	cout << "4) Exit\n";
+	cout << "Option: ";
+	getline(cin, choice, '\n');
+	int a;
+
+	// If the choice is 1 then the search word function is called as according to the corresponding menu options. 
+
+	if (choice == "1")
+	{
+		test.search();
+		menu();
+		choice = "0";
+
+	}
+	else if (choice == "2")
+	{
+		test.find_zzz();
+		menu();
+
+	}
+	else if (choice == "3")
+	{
+		test.ufollowingq();
+		menu();
+	}
+	else if (choice == "4")
+	{
+		cout << "Goodbye!";
+		exit(0);
+	}
+	else
+	{
+		cout << "Invalid choice\n\n";
+		menu();
+	}
+
+}
