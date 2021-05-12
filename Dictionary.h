@@ -19,19 +19,17 @@ using namespace std;
 
 class Dictionary
 {
-private:
+protected:
 	vector<Word> theWords;
+
+private:
 	string word;
 	string type;
-	string definition;
 	string definition;
 	
 
 public: 
-	
-	void search();
-	void ufollowingq();
-	void find_zzz();
+	Dictionary();
 
 	void loadDictionary(string dictionaryFile)
 	{
@@ -141,7 +139,6 @@ public:
 			}
 		}
 	}
-
 
 	
 };
